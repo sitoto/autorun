@@ -8,12 +8,12 @@ end
 ENV['MONGOID_ENV'] = 'localcar'
 Mongoid.load!("config/mongoid.yml")
 
-Product.all.each do |product|
+@parts = Part.where(:from_site => '亚马逊').asc(:updated_at)
+
+@parts.all.each do |product|
   url = product.url
   doc = Nokogiri::HTML(open(url))
   price = doc.at_xpath('//span[@id="actualPriceValue"]/b/text()').to_s
-  puts price
-    
-  product.update_attribute(:price, price)
-  break
+  product.update_attribute(:price, price) if !price.blank?
+  puts "do-#{url}"
 end

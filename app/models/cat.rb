@@ -1,4 +1,4 @@
-class AutoMotive
+class Cat 
   include Mongoid::Document
   include Mongoid::Timestamps
   
@@ -11,8 +11,8 @@ class AutoMotive
   field :from_site, type: String    
   
   
-  has_many :child_auto_motives, :class_name => 'AutoMotive', :inverse_of => :parent_auto_motive
-  belongs_to :parent_auto_motive, :class_name => 'AutoMotive', :inverse_of => :child_auto_motives
+  has_many :child_auto_motives, :class_name => 'Cat', :inverse_of => :parent_auto_motive
+  belongs_to :parent_auto_motive, :class_name => 'Cat', :inverse_of => :child_auto_motives
   
-  has_many :products
+  has_many :parts
 end

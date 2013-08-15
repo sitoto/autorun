@@ -1,4 +1,4 @@
-class Product
+class Part
   include Mongoid::Document
   include Mongoid::Timestamps
   
@@ -20,5 +20,5 @@ class Product
   
   
   embeds_many :parameters
-  belongs_to :auto_motive
+  belongs_to :cat
 end
