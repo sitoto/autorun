@@ -21,4 +21,5 @@ class Part
   
   embeds_many :parameters
   belongs_to :cat
+  embeds_many :jias
 end

@@ -8,5 +8,5 @@ class Parameter
   field :num, :type => String
   
 
-  embedded_in :product
+  embedded_in :part
 end
