@@ -9,6 +9,8 @@ class Part
   field :category, type: String 
   field :small_image_url, type: String
   field :from_site, type: String  
+  field :hot, type: Integer
+  
   field :comment_info, type: String  
   
   field :category_1, type: String
